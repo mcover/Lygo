@@ -1,0 +1,38 @@
+Lygo Documentation: Table of Contents
+
+*AddingToTheSystem
+*Cheat
+*Contact
+*Credits
+*Description
+*HacksAndQuirks
+*HowToMakeABuild
+*Middleware
+*ScriptBreakdown
+
+ADDING TO THE SYSTEM:
+Information related to adding elements to the current system.
+
+CHEAT:
+Information related to developer cheats.
+
+CONTACT:
+Information related to contacting the previous developers.
+
+CREDITS:
+The names of the people involved in making this game.
+
+DESCRIPTION:
+A brief description of our game and intention for this project.
+
+HACKS AND QUIRKS:
+Information related to weird things in this game, including hacks and quirks within the game.
+
+HOW TO MAKE A BUILD:
+Information related to making a build.
+
+MIDDLEWARE:
+Information related to third party software and assets in our project.
+
+SCRIPT BREAKDOWN:
+Information related to which scripts control which behavior and where to find them.

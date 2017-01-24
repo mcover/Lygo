@@ -1,0 +1,69 @@
+Lygo Documentation: Adding to the Existing System.
+
+
+REARRANGING THE MAP:
+Moving the elements that are currently in the Unity scene should not break the functionality of the game, but you should be aware that it 
+is possible to make an impossible level.
+
+ADDING MORE CABLE:
+Duplicate or copy one of the existing Cable pickups and place wherever you want. To change how much it will extend the cable there is a 
+variable in the Editor.  You can also change the amount of cable added by the currently existing pickups in the Editor.
+
+ADDING MORE BATTERY:
+Duplicate or copy one of the existing Battery pickups and place wherever you want. To change how much it will extend the battery life there is a 
+variable in the Editor.  You can also change the amount of battery life added by the currently existing pickups in the Editor.  You should be 
+aware that adding more battery is not necessarily guarenteed to make the game less frustrating.  If you add even one more battery to the first
+socket on our level, players can see the second socket, maybe even get to it, without ever learning that they should replug into the socket to 
+recharge their battery.
+
+ADDING MORE LIGHT:
+Now, when you pickup a Light pickup, the game loads the next sprite from the Resources folder according to how many times you've collected a Light
+pickup. Also, the camera zooms out so that you can see on the screen everything revealed by your new light.  There are currently three Light pickups
+in the level and three matching mask/light sprites in the Resources/Sprites folder.  To add another Light pickup, you should add the mask/light to the 
+Resources folder.  The script loads the appropriate sprite by the string name, so make sure the name of the sprite is Light plus a number. If you 
+wanted to add a new light between lights 2 and 3. You should rename Light3 to be Light4, and save your new sprite as Light3. If the script cannot
+find the file with the name it expects it will have a null sprite which is just empty.  You will see a square which is empty around the robot. 
+To change the existing lights for pickups, you should replace the Light1, Light2, and Light3 files in Resources/Sprites. If the new sprites are the 
+correct size and pattern, you should not have to adjust the placement of the sprite.  Use the current files as a reference.  
+
+ADDING NEW TYPE OF PICKUP:
+You should make a new C# Script which inherits from Pickup.  If the pickup should be activated as soon as the spaceship collects it, set 
+activateImmediately to true, else false.  You will need to write an Activate function and a Cleanup function.  The Activate function should be the one
+that actually does a thing.  For instance, if you want to add a pickup that made a red circle appear on the screen, the Activate function would make the
+circle appear and the Cleanup function, which is always called immediately, would destroy or disable the pickup depending on if you activateImmediately,
+or later.  If you plan to activate later, do not destroy your pickup in the cleanup function. Add this script to a game object, as well as a sprite 
+renderer and a circle collider.  The game object should be on the pickups Layer. Make sure the sorting layer on the Sprite Renderer is Hidden and the 
+Order in Layer is 0. On the circle collider, make sure Is Trigger is checked. If you are activating later, make sure you actually call your activate 
+function somewhere or your pickup will never be activated. 
+
+SOCKET/PLANET:
+Each socket/planet has a number which matches its gem and its UI element.  Because we knew we had four sockets, some of these numbers, which are reachable
+through the Editor, are sliders from 0-3.  This is changeable at the top of the corresponding script.  The new socket will be socket 4. Its gem should also 
+be number 4 and match the structure of the current gems. The Picked Up Sprite should be the sprite of the corresponding UI element.  The Gem Pickup Script
+will also have to be changed to allow a number greater than 3. In the GUICanvas, in the GemHolder,  there are currently 4 game objects. I would recommend
+copying one of them, and changing its name to match your new socket/gem.  The location of this new Holder needs to be where you want the UI element to appear
+as well as where you want the shapes that move from Pickup to UI and from UI to Socket to go to/from respectively. The Holder has two children the Gem and 
+the GlowHolder.  The Gem should be sitting at the center of the Holder and have the sprite that you want for the UI element.  The sprite on the GlowHolder
+will need to be replaced to match the shape of your new sprite. It will already have the script needed to make it "breathe" on activation.  Make sure the 
+GemUI script on the Color Holder has the correct number and a reference to its own GlowHolder.  Last, but not least, change the win condition in the 
+GameManager to expect one more socket before notifying that the player has won.  
+
+NEW UI ELEMENT: 
+If you want to add something to the start screen, it goes on the StartCanvas. If you want it to appear during game play, it should go on the 
+GUICanvas, and be controlled by the UIController script.  If you want it on the end screen, it should be on the WinCanvas. For the credit screen, it should be 
+on the CreditsCanvas. Adding new UI elements should not affect any other systems. 
+
+RADAR STATION:
+Duplicate a currently existing station and move it to where you want it to be.  
+
+ADDING ANOTHER SPACESHIP/PLAYER:
+You probably actually don't want to do this.  Our current light system is a set of masks which are nested on the space ship, and therefore move with him.  The
+light is actually a hole in these masks. If you add another of these light/mask systems, they will overlap and no one will be able to see the layer beneath the 
+masks. To add another spaceship, you would need to completely rework the lighting system. Another problem, all the scripts on the robot are expected to be 
+singletons. If you added another player, you would have to deal with that as well, since you will now have multiple copies of the same script.  
+
+ADDING A NEW LEVEL:
+Change the function that starts the end process to load a new level instead.  
+
+ADDING MORE END ROBOTS:
+Duplicate and move the ones that are there.  You can adjust the tweening of their movement in the Editor.  

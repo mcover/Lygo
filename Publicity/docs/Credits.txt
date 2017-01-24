@@ -1,0 +1,61 @@
+Created By:
+Gregory Kogos
+Eyal Stern
+Miranda Cover
+Einat Daniel-Krumholtz
+
+Guidance by:
+Philip Tan
+
+Sound by:
+Jamie Billings
+
+Licensed Assets:
+2D Rope Plugin
+by Temo Kokiashvili
+TKstudio, Unity Asset Store
+
+Neou font
+by André Uenojo
+Creative Market
+
+Amplifier Effects Unplug 03
+by Soundrangers Sound Effects and Production Music
+Pond5.com
+
+Electricity Outlet
+by Sound Ideas
+Pond5.com
+
+Sonar Ping
+by Digifish Music
+Freesound.org
+
+First Ping
+Ivan Bailey
+Freesound.org
+
+Broken Power Source 002
+by AlienXXX
+Freesound.org
+
+Studio Credits:
+MIT Game Lab, at the Massachusetts Institute of Technology:
+Scot Osterweil, Creative Director 
+Richard Eberhardt, Studio Manager
+Sara Verrilli, Development Director 
+Philip Tan, Research Scientist
+Andrew Grant, Technology Director
+Kyrie Caldwell, Research Assistant
+
+Special thanks to Professor Eric Klopfer, Emily Martin, Jim Harrington, and the Architecture Department at MIT.
+
+This workshop was made possible thanks to the generous support of Dr. Avraham Kadar and Michal Kadar.
+
+Shenkar Game Center:
+Vered Pnueli, Head of Digital Programs
+Goldy, Game Producer
+Daniel Marmari, Art Director
+
+© 2015 Massachusetts Institute of Technology and Shenkar College of Engineering, Design and Art.  All Rights Reserved.
+

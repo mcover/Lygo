@@ -1,0 +1,3 @@
+Lygo is an exploration game. In Lygo the player starts off connected to a world via a cable, and has to find upgrades to his small ship that will allow him to explore his surroundings further, and eventually seperate (unplug) from his world and venture towards new worlds.
+
+We set out to create a game about the feeling of leaving home, how it is scary and might be difficult, but through that experience you can grow and evolve, and find a new home. The player eventually comes back to each of his homes and makes them better, and eventually manages to free himself from the shackles of him and live as a free spirit, at home wherever it goes.

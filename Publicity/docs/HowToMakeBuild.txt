@@ -1,0 +1,15 @@
+Lygo: documentation
+
+How to make a build:  
+*Log into the Perforce server.
+*Expand the Philip folder in 2015
+*Right click on the UnityProject folder
+*Choose "Get Latest Revision"
+*Open Unity
+*Select "open other" and navigate in your Perforce workspace to the UnityProject folder
+*Double-check the build settings, Lygo should be scene 1 and loader should be scene 0
+*Building from this will get you a working build
+NOTE: To see start screen when building in Unity, you need to play the loader scene. Otherwise, you will just see 
+the beginning of the game without the start screen. In the actual build this is handled by the build settings having
+loader as 0.
+

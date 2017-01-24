@@ -1,0 +1,104 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &146190
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 499006}
+  - 114: {fileID: 11495686}
+  - 114: {fileID: 11430504}
+  - 114: {fileID: 11419886}
+  - 114: {fileID: 11485974}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &499006
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 146190}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 3.0026865, y: 1.50445032, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+--- !u!114 &11419886
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 146190}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eeec9acc896b65c4ea5bf881df4749f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delayForCameraReturn: .5
+  delayForControlReturn: 0
+  scaleDownTime: 1
+  timeToGlow: 1
+  scaleUpTime: 1
+  decreaseSpriteAlphaTime: 1
+  cameraMoveTime: 2
+  buttonHolder: {fileID: 0}
+--- !u!114 &11430504
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 146190}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa8c70009a40b334599daa683e01c517, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  unpluggedColor: {r: 1, g: 1, b: 1, a: 1}
+  socketColors:
+  - {r: .713235259, g: .989902616, b: 1, a: 1}
+  - {r: 1, g: .801470578, b: .947496355, a: 1}
+  - {r: .984313726, g: .847058833, b: .643137276, a: 1}
+  - {r: .901151478, g: .816176474, b: 1, a: 1}
+--- !u!114 &11485974
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 146190}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49831af3091a6704487bdf3d55e213a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  robotContainer: {fileID: 0}
+--- !u!114 &11495686
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 146190}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b34544916afb822448d0b77fa5e750d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  numberOfSockets: 4
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 146190}
+  m_IsPrefabParent: 1

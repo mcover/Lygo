@@ -1,0 +1,127 @@
+Lygo: documentation
+
+How to make a build:  
+*Log into the Perforce server.
+*Expand the Philip folder in 2015
+*Right click on the UnityProject folder
+*Choose "Get Latest Revision"
+*Open Unity
+*Select "open other" and navigate in your Perforce workspace to the UnityProject folder
+*Double-check the build settings, Lygo should be scene 1 and loader should be scene 0
+*Building from this will get you a working build
+NOTE: To see start screen when building in Unity, you need to play the loader scene. Otherwise, you will just see 
+the beginning of the game without the start screen. In the actual build this is handled by the build settings having
+loader as 0.
+
+Script Folders in Unity Project: 
+*Cables
+*Camera
+*EndingScripts
+*Game
+*Pickups
+*Robot
+*Toolbox
+*UI
+*Utility
+
+Breakdown of Folder Content:
+
+CABLES:
+*CableEnd
+*CablePart
+*Socket
+The scripts in the Cables folder relate to the behavior of the cord and socket. The Socket script also handles the revealing of the sockets once you've reached them, but it does
+not handle the socket activation process, which is handled in SocketFeedbackController.  Each socket has a 
+unique number which should match the corresponding gem and UI element.
+
+CAMERA:
+*CameraManager
+The scripts in the Camera folder relate to the behavior of the camera. There is a bool used when something else is 
+controlling the camera, such as the SocketFeedbackController.  
+
+ENDING SCRIPTS:
+*RandomMovementCycle
+*EnableOtherRobots
+The scripts in the EndingScripts folder relate to the end scene.  The movement of the other robots at the end is 
+controlled by the RandomMovementCycle Script and the EnableOtherRobots enables the game object holding the other 
+robots at the end of the game.  
+
+GAME:
+*GameManager
+*ColorManager
+*SocketFeedbackController
+*SoundManager
+The scripts in Game relate to overall game control.  The ColorManager handles the color of the spaceship's light, 
+which depends on which planet/socket he was last connected to.  The SoundManager handles the sound effects and music.
+The SocketFeedbackController handles the series of events which occur when a gem/shape is plugged into the correct 
+planet/socket and the timing of those events. The time inbetween events is changeable from the Unity Editor.  
+The GameManager handles restarting the game when the player dies and when the player wins.  The number of sockets/planets
+needed to recognize a win is changeable from the Unity Editor.
+
+PICKUPS:
+*Pickup
+*BatteryPickup
+*ExtensionPickup
+*GemPickup
+*LightPickup
+*PointOfInterest
+*RadarStation
+The scripts in Pickups relate to the items you encounter while exploring. BatteryPickup, ExtensionPickup, GemPickup, and 
+LightPickup inherit from Pickup. Each pickup and station has a PointOfInterest.  The "POI" are what you see when the radar 
+is activated. 
+
+ROBOT:
+*RobotAnimationManager
+*RobotBatteryAnimator
+*RobotBatteryManager
+*RobotCableManager
+*RobotInputHandler
+*RobotLightEnabler
+*RobotPickupManager
+*RobotRadar
+The scripts in Robot relate to the movement and behavior of the Spaceship/Robot.  The RobotInputHandler controls the 
+user input and its translation into spaceship movement. The AnimationManager handles death and the win particles system.
+It also handles changing the particles colors on the spaceship as it moves between sockets/planets.  The BatteryAnimator
+handles the battery indicator's behavior. The BatteryManager keeps track of the actual battery value. It depletes the 
+battery according to whether the player is moving or idling. The CableManager stops the spaceship from moving beyond the
+end of its cable as well as activating extension pickups when you plug in. It also calls the actions for unplugging and 
+plugging in.  The LightEnabler turns on the spaceship light at start.  The PickupManager cleans up pickups.  If a 
+pickup is marked activateImmediately the pickup manager does so, otherwise it adds it to the list of pickups. It also 
+handles searching for pickups of a specific type. The RobotRadar notifies the Radar station that it should do it's thing.
+The RobotRadar also changes the camera zoom and controls the cooldown time between radar pulses.
+
+TOOLBOX:
+*Toolbox
+The Toolbox script allows access to the scripts of which there is only one.  They register themselves to the Toolbox as 
+tools and then other scripts can access them by requesting the tool from the Toolbox.
+
+UI:
+*Fading
+*Flash
+*FlashForSocket
+*GemUIScript
+*MoveTo
+*SetPlayerPref
+*StartCanvas
+*SwitchToCredits
+*UIController
+*WinCanvas
+The scripts in UI relate to the game GUI and some of the visual feedback. The Fading script handles fading to black on
+death.  Flash is the script on the UI elements which makes them pulse when activated.  There is an Animation Curve for
+each element which can be edited through the Unity Editor.  FlashForSockets is the equivalent script for the socket 
+glows. The difference between them is that Flash needs a canvas renderer and FlashForSockets needs a sprite renderer.
+The GemUIScript is on each of the Gem UI elements.  It keeps a reference to its gem number and the glow for when the gem
+is activated. The MoveTo script takes a game object and a destination and moves the game object towards the destination.
+It is used to move the gem pickups towards the gem GUI.  The SetPlayerPrefs script is used in the loader scene to set 
+PlayerPrefs. We use this so that the player sees the start screen only the first time the scene is loaded and not every
+time they die and the scene is reloaded. Start Canvas is the script used by the start canvas to control which canvases 
+are showing and contains the function the start button uses to start the game.  This script checks the player prefs on 
+start to see if it should activate the start canvas or not.  SwitchToCredits contains the functions used by the Credits
+button and the back button on the credits canvas.  UIController controls most of the UI behavior. It controls when you 
+see the unplug button, showing the gem UI elements, and getting the gem UI's world position.  The WinCanvas script 
+controls which canvases are active on win and contains the function used by the restart button. 
+  
+UTILITY:
+*LayerOrderSorter
+The LayerOrderSorter is used to get and control the layer order of many object in the game. 
+

@@ -1,0 +1,68 @@
+Lygo Documentation: Hacks and Quirks
+
+SPACESHIP LIGHTCONE:
+The lightcone on the spaceship is actually cut out of a black mask which covers all the
+collectables.  This will pose a problem if you intend to make the game multiplayer.  The 
+lights on the extra robots at the end are sprites nested on the robots and don't reveal 
+any pickups.  To make this game work with more than one main character, you will have to 
+redo the whole lighting system.
+
+ROBOTS AND SOCKETS:
+Robot = Spaceship
+Socket = Planet
+
+MULTITOUCH ON TABLETS:
+The input system in Lygo is not set up to handle multitouch.  It seems like it takes the 
+average of the multiple touches and registers that as one touch.  If you are touching in
+one place and touching the unplug button, the robot will unplug but it will also move a 
+little in the direction of the average of your two touches.  To fix this, you will need
+to address multitouch in the input handler.
+
+SOCKET AND GEM PREFABS:
+So, we started out with a single socket prefab and a gem prefab.  The problem with this is
+that each socket has unique art, a unique identifying number, a unique gem that it matches
+with, and so on and so forth.  The current sockets have very little connection to the 
+prefab and if you want to add something to all of them you  must add it to each of them 
+individually. The same is  true of the gems.  If you wanted to add and or modify more 
+sockets, you should look into fixing this such that the prefabs could be more helpful.  
+
+TRUECOLOR ASSETS:
+Almost all of the art assets are imported as true color.  Most of them have a gradient 
+effect which looks striated when compressed.  All the assets being true color takes a toll 
+on the size of the project.  To reduce the size of the project, I would start by reducing 
+the number of art assets which require true color to look good.  The pick ups for instance
+could be replaced with sprites without a gradient so that they could be compressed.  
+
+LOADER SCENE:
+The loader scene has only a camera with a black background and an empty game object with a 
+script on it.  The loader scene has the sole function of setting the player prefs so that 
+the start screen only occurs the first time the actual scene is loaded.  If you wanted to 
+see the start screen when you hit restart at the end of the game, you could set the player
+pref in the restart function to do so.  Currently, the game takes a while to start up, 
+which I think is a result of this system and the size of the game.  
+
+PICKUP SYSTEM:
+The pickups are currently stored as a list and the function which you call to retrieve an 
+item from this list only returns one item of the specified type.  This means that when we, 
+for instance, want all the cable pickups to extend the cable the correct amount, we call 
+this function until it returns null.  In order to make this more efficient, the function
+should return a list of all the items of the specified type.  If you really need to make 
+this more efficient, consider a different data structure. Searching through lists takes a 
+long time (Personal recommendation: Try a Hash Map or something similar).
+
+C# ACTIONS:
+A lot of Lygo's programming relies heavily on Actions.  If you've never used them before,
+breathe; they're really not that bad.  Think of it like a notification system.  You sign
+up functions to wait for a specific thing to happen, such as unplugging.  This signing up
+happens in RegisterActions() functions which are called in start.  It needs to be done in
+start and not in awake so that the thing you are registering to already exists. Then, when
+that Action is called (as a function) all the functions which are registered to it happen
+as well. On disable, you should check if null then remove the action listeners.
+
+TOOLBOX:
+The toolbox is a way of managing singletons, essentially.  If you have a script, of which 
+there should only be one, in its awake function you should register it as a tool 
+(Toolbox.RegisterAsTool(this)). You should also unregister it as a tool in its on destroy
+function (Toolbox.Unregister...).  The toolbox can then be used to access this script from 
+other places in the project.  If there is more than one of that script in the toolbox, such as
+if you tried to register Socket, things will go wrong.

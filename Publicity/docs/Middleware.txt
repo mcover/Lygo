@@ -1,0 +1,80 @@
+Unity Game Engine
+Unity Technologies
+EULA: https://unity3d.com/legal/eula
+
+Pond5.com sounds:
+http://www.pond5.com/legal/license
+
+Amplifier Effects Unplug 03
+by Soundrangers Sound Effects and Production Music
+http://www.pond5.com/sound-effect/6142159/amplifier-effects-unplug-03.html
+
+Electricity Outlet
+by Sound Ideas
+http://www.pond5.com/sound-effect/8744035/electricityoutlet.html
+
+Freesound.org sounds:
+
+Broken Power Source 002
+by AlienXXX
+http://www.freesound.org/people/AlienXXX/sounds/165088/
+CC-BY: http://creativecommons.org/licenses/by/3.0/
+
+Sonar Ping
+by Digifish Music
+http://www.freesound.org/people/digifishmusic/sounds/42796/
+CC-BY: http://creativecommons.org/licenses/by/3.0/
+
+First Ping
+Ivan Bailey
+http://www.freesound.org/people/ivanbailey/sounds/41344/
+CC-BY: http://creativecommons.org/licenses/by/3.0/
+
+
+
+
+2D Rope Plugin
+by Temo Kokiashvili
+TKstudio
+https://www.assetstore.unity3d.com/en/#!/content/17722
+EULA: http://unity3d.com/legal/as_terms
+
+Neou
+by André Uenojo
+http://www.dafont.com/neou.font
+
+NEOU v1.0
+Styles: Thin / Bold
+------------------------------------
+This license is only for people, agencies or companies that bought the license of NEOU typeface.
+
+Designed by AndrÈ Noboru Uenojo.
+Completed in 2012, January.
+------------------------------------
+Available in OpenType PS (OTF) and TrueType (TTF) formats.
+------------------------------------
+
+
+
+L I C E N S E  I N F O R M A T I O N:
+
+YOU CAN:
+1) Use this font in commercials designs.
+2) Use this font in personals designs.
+
+
+YOU CAN NOT:
+
+
+1) Re-distribute this font by any means, for free or for a fee
+2) Alter this font for re-distribution.
+
+-----------------------------------
+AndrÈ Noboru Uenojo
+cargocollective.com/Andreuenojo
+
+S„o Paulo, Brazil.
+2012, January.
+----------------------------------
+If you have any comments or matters, please contact:
+Andreuenojo@gmail.com
